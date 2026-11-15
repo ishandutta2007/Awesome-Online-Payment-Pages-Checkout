@@ -1,7 +1,30 @@
-# Awesome Online Payment Pages & Checkout [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+<div align="center">
 
-> A curated list of top Online Payment Page and Checkout platforms — both SaaS/Hosted commercial solutions and open-source alternatives for accepting payments with hosted, embeddable, or self-hosted checkout experiences.
-> 🌟 Star this repo if you find it useful! 🌟
+![Awesome Online Payment Pages & Checkout Banner](assets/banner.svg)
+
+# 💳 Awesome Online Payment Pages & Checkout 🚀
+
+<p align="center">
+  <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a>
+  <a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://awesome.re/badge.svg" alt="Awesome List"/></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Online-Payment-Pages-Checkout/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Online-Payment-Pages-Checkout?style=social" alt="GitHub Stars"/></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Online-Payment-Pages-Checkout/network/members"><img src="https://img.shields.io/github/forks/ishandutta2007/Awesome-Online-Payment-Pages-Checkout?style=social" alt="GitHub Forks"/></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Online-Payment-Pages-Checkout/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-CC0_1.0-blue.svg" alt="License: CC0 1.0"/></a>
+  <a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
+</p>
+
+<p align="center">
+  <strong>A curated directory of top Online Payment Page &amp; Checkout platforms — spanning hosted SaaS checkout sessions, embedded payment widgets, branded payment links, and open-source payment orchestration engines.</strong>
+</p>
+
+<p align="center">
+  🌟 <em>Star this repo if you find it helpful!</em> 🌟
+</p>
+
+</div>
+
+---
 
 Discover the best hosted payment pages, embedded checkout widgets, payment links, and open-source payment orchestration platforms. Whether you need standard card processing via Stripe or PayPal, custom-branded enterprise checkout via Adyen, or fully self-hosted, commission-free checkout alternatives like Hyperswitch and BTCPay Server, this guide covers architecture, pricing, limits, and developer tooling.
 
@@ -9,13 +32,15 @@ Discover the best hosted payment pages, embedded checkout widgets, payment links
 
 ## 📋 Table of Contents
 
-- [Sector Overview & Market Dynamics](#-sector-overview--market-dynamics)
-- [SaaS / Hosted Platforms](#-saas--hosted-platforms)
-- [Open-Source Software](#-open-source-software)
-- [Feature Comparison Matrix](#-feature-comparison-matrix)
-- [Key Evaluation Criteria](#-key-evaluation-criteria)
-- [Contributing](#-contributing)
-- [License](#-license)
+- [📈 Sector Overview & Market Dynamics](#-sector-overview--market-dynamics)
+- [🟦 SaaS / Hosted Platforms](#-saas--hosted-platforms)
+- [🟩 Open-Source Software](#-open-source-software)
+- [🔍 Feature Comparison Matrix](#-feature-comparison-matrix)
+- [💡 Key Evaluation Criteria](#-key-evaluation-criteria)
+- [💖 Support & Sponsorship](#-support--sponsorship)
+- [🤝 Contributing](#-contributing)
+- [📈 Star History](#-star-history)
+- [📄 License](#-license)
 
 ---
 
@@ -33,7 +58,7 @@ Commercial, cloud-hosted Online Payment Page and Checkout platforms. These provi
 
 The table below is sorted in descending order by company scale (market capitalization or latest enterprise valuation):
 
-| Platform | Company Scale (Valuation / Revenue) | Pricing (Starting Tier) | Free Tier Limit / Trial | Hosted Checkout Features | Best For |
+| 🏢 Platform | 📊 Company Scale (Valuation / Revenue) | 🏷️ Pricing (Starting Tier) | 🎁 Free Tier Limit / Trial | ⚡ Hosted Checkout Features | 🎯 Best For |
 |:---|:---|:---|:---|:---|:---|
 | **[Stripe Checkout](https://stripe.com/payments/checkout)** | **$159B Valuation** (~$6.8B ARR) | **2.9% + $0.30** per transaction (domestic cards); +1.5% international | **$0/month, Pay-as-you-go** (No transaction allowance; $0 platform fee, pay strictly per successful transaction with no monthly minimums) | Pre-built responsive payment page, 100+ payment methods, Apple/Google Pay, dynamic address collection, 1-click Link checkout | Fast-growing SaaS, global e-commerce, and subscription businesses |
 | **[PayPal Commerce Platform](https://www.paypal.com/business)** | **~$52B Market Cap** (~$33.2B Revenue) | **3.49% + $0.49** per PayPal/Venmo checkout transaction (2.89% + $0.29 for standard cards) | **$0/month, Pay-as-you-go** (No free volume included; $0 monthly account maintenance fee, pay only per transaction) | Hosted checkout buttons, Venmo integration, Pay Later (BNPL), vaulting, seller protection | Consumer-facing storefronts leveraging PayPal brand trust & 400M+ active wallets |
@@ -48,7 +73,7 @@ The table below is sorted in descending order by company scale (market capitaliz
 
 Self-hosted, developer-friendly payment orchestration engines, self-hostable payment links, and checkout frameworks. Sorted in descending order by GitHub stars.
 
-| Repository | GitHub Stars | Stack | License | Architecture & Capabilities | Primary Use Case |
+| 📦 Repository | ⭐ GitHub Stars | 🛠️ Stack | 📜 License | 🏗️ Architecture & Capabilities | 🎯 Primary Use Case |
 |:---|:---:|:---|:---|:---|:---|
 | **[juspay/hyperswitch](https://github.com/juspay/hyperswitch)** | [![Stars](https://img.shields.io/github/stars/juspay/hyperswitch?style=social&color=white)](https://github.com/juspay/hyperswitch/stargazers) | Rust / TypeScript / Docker | Apache-2.0 | High-performance payment switch connecting to 100+ processors (Stripe, Adyen, Braintree). Includes unified checkout UI, vault tokenization, smart routing, and auto-retries. | Enterprise payment orchestration & multi-PSP fallback |
 | **[medusajs/medusa](https://github.com/medusajs/medusa)** | [![Stars](https://img.shields.io/github/stars/medusajs/medusa?style=social&color=white)](https://github.com/medusajs/medusa/stargazers) | TypeScript / Node.js / PostgreSQL | MIT | Modular headless commerce engine with multi-currency checkout, cart flows, dynamic shipping, tax calculations, and payment gateway adapters. | Custom headless e-commerce backends with checkout flows |
@@ -68,7 +93,7 @@ Self-hosted, developer-friendly payment orchestration engines, self-hostable pay
 
 ## 🔍 Feature Comparison Matrix
 
-| Project | Type | PCI Scope Reduction | Subscriptions / Recurring | Dynamic Payment Routing | Self-Hosted Deployment |
+| 🛠️ Project | 🏷️ Type | 🛡️ PCI Scope Reduction | 🔄 Subscriptions / Recurring | 🔀 Dynamic Payment Routing | 💻 Self-Hosted Deployment |
 |:---|:---:|:---:|:---:|:---:|:---:|
 | **Stripe Checkout** | SaaS | ✅ SAQ A | ✅ Native Stripe Billing | ❌ (Stripe only) | ❌ Cloud only |
 | **PayPal Commerce** | SaaS | ✅ SAQ A | ✅ Built-in | ❌ (PayPal rails) | ❌ Cloud only |
@@ -92,10 +117,20 @@ Self-hosted, developer-friendly payment orchestration engines, self-hostable pay
 
 When selecting a hosted payment page or checkout stack, consider:
 
-1. **Compliance Overhead (PCI DSS):** Hosted checkout pages (like Stripe Checkout or Mollie Payment Links) restrict your audit scope to **SAQ A**, ensuring raw primary account numbers (PANs) never touch your web servers.
-2. **Payment Method Breadth (APMs):** Conversion rates rise by up to 30% when presenting localized payment methods (e.g., Apple Pay, Google Pay, iDEAL in the Netherlands, Pix in Brazil, Klarna BNPL).
-3. **Take Rates & Processing Margins:** Commercial SaaS platforms take between `1.8% + €0.25` and `3.49% + $0.49`. For high-volume or margin-sensitive applications, self-hosting an orchestration layer like **Hyperswitch** or a crypto gateway like **BTCPay Server** eliminates middleman platform fees.
-4. **Developer Experience & APIs:** Stripe-compatible schemas (emulated by TPT Pay and Zoneless) minimize rewrite costs when migrating between hosted and self-hosted environments.
+1. **🛡️ Compliance Overhead (PCI DSS):** Hosted checkout pages (like Stripe Checkout or Mollie Payment Links) restrict your audit scope to **SAQ A**, ensuring raw primary account numbers (PANs) never touch your web servers.
+2. **🌐 Payment Method Breadth (APMs):** Conversion rates rise by up to 30% when presenting localized payment methods (e.g., Apple Pay, Google Pay, iDEAL in the Netherlands, Pix in Brazil, Klarna BNPL).
+3. **💰 Take Rates & Processing Margins:** Commercial SaaS platforms take between `1.8% + €0.25` and `3.49% + $0.49`. For high-volume or margin-sensitive applications, self-hosting an orchestration layer like **Hyperswitch** or a crypto gateway like **BTCPay Server** eliminates middleman platform fees.
+4. **⚙️ Developer Experience & APIs:** Stripe-compatible schemas (emulated by TPT Pay and Zoneless) minimize rewrite costs when migrating between hosted and self-hosted environments.
+
+---
+
+## 💖 Support & Sponsorship
+
+Thank you so much for checking out and using this curated resource! If this list has saved you engineering time, helped you evaluate payment infrastructure, or inspired your checkout design, please consider showing your support:
+
+- ⭐ **Star this repository** to show appreciation and boost its reach across the developer community.
+- 🍴 **Fork and share** it with fellow software architects, fintech engineers, and entrepreneurs.
+- ☕ **Buy a coffee & sponsor**: You can directly sponsor ongoing maintenance and updates on the [Sponsor Dashboard](https://github.com/sponsors/ishandutta2007). Your support is immensely appreciated!
 
 ---
 
@@ -103,9 +138,14 @@ When selecting a hosted payment page or checkout stack, consider:
 
 Contributions to expand this curated collection are welcome! To propose a new open-source payment tool, checkout library, or hosted platform, please submit a pull request ensuring:
 
-- The repository is actively maintained (commits or releases within the past 12 months).
-- Open-source submissions include an OSI-approved license.
-- Include a neutral description highlighting stack, architecture, and checkout features.
+- 🔄 The repository is actively maintained (commits or releases within the past 12 months).
+- 📜 Open-source submissions include an OSI-approved license.
+- ✍️ Include a neutral description highlighting stack, architecture, and checkout features.
+
+---
+
+##  Star History
+[![Star History Chart](https://www.star-history.com/svg?repos=ishandutta2007/Awesome-Online-Payment-Pages-Checkout&type=date&legend=top-left)](https://www.star-history.com/#ishandutta2007/Awesome-Online-Payment-Pages-Checkout&type=date&legend=top-left)
 
 ---
 
@@ -115,4 +155,6 @@ This repository is distributed under the [CC0 1.0 Universal](LICENSE) (Public Do
 
 ---
 
-⭐ **If this repository helps streamline your checkout or payment infrastructure, please star it!** ⭐
+<div align="center">
+  ⭐ <strong>If this repository helps streamline your checkout or payment infrastructure, please star it!</strong> ⭐
+</div>
