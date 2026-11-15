@@ -1,157 +1,118 @@
-# Awesome-Online-Payment-Pages-Checkout
-
-# Awesome Online Payment Pages & Checkout
+# Awesome Online Payment Pages & Checkout [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
 > A curated list of top Online Payment Page and Checkout platforms — both SaaS/Hosted commercial solutions and open-source alternatives for accepting payments with hosted, embeddable, or self-hosted checkout experiences.
 > 🌟 Star this repo if you find it useful! 🌟
+
+Discover the best hosted payment pages, embedded checkout widgets, payment links, and open-source payment orchestration platforms. Whether you need standard card processing via Stripe or PayPal, custom-branded enterprise checkout via Adyen, or fully self-hosted, commission-free checkout alternatives like Hyperswitch and BTCPay Server, this guide covers architecture, pricing, limits, and developer tooling.
 
 ---
 
 ## 📋 Table of Contents
 
+- [Sector Overview & Market Dynamics](#-sector-overview--market-dynamics)
 - [SaaS / Hosted Platforms](#-saas--hosted-platforms)
-  - [Stripe Checkout](#stripe-checkout)
-  - [PayPal Commerce Platform](#paypal-commerce-platform)
-  - [Square Online Checkout](#square-online-checkout)
-  - [Adyen](#adyen)
-  - [Braintree](#braintree)
-  - [Mollie](#mollie)
 - [Open-Source Software](#-open-source-software)
-  - [Open Payment Host](#open-payment-host)
-  - [Zoneless](#zoneless)
-  - [TPT Pay](#tpt-pay)
-  - [Spree Commerce Storefront](#spree-commerce-storefront)
-  - [StatiCart](#staticart)
+- [Feature Comparison Matrix](#-feature-comparison-matrix)
+- [Key Evaluation Criteria](#-key-evaluation-criteria)
+- [Contributing](#-contributing)
+- [License](#-license)
+
+---
+
+## 📈 Sector Overview & Market Dynamics
+
+The global payment gateway and online checkout software market was valued at **$26.7B – $34.2B in 2024** and is projected to expand to **$56.9B – $146.2B by 2030** at a compound annual growth rate (CAGR) of **11% to 22.8%**, fueled by mobile commerce, recurring digital subscriptions, and alternative payment method (APM) adoption. 
+
+The industry exhibits a **bifurcated, moderately concentrated** structure: core underlying card acquisition and global processing volume are dominated by an oligopoly of mega-scale incumbents (Stripe, PayPal, Adyen, and Block/Square processing trillions collectively), while the front-end checkout software layer, regional payment orchestration, and self-hosted developer tools remain **highly fragmented** due to localized rails (e.g., Pix, UPI, iDEAL), compliance mandates, and developer demand for zero-take-rate infrastructure.
 
 ---
 
 ## 🟦 SaaS / Hosted Platforms
 
-Commercial, cloud-hosted Online Payment Page and Checkout platforms. These are not open-source but are included as reference points for feature comparison.
+Commercial, cloud-hosted Online Payment Page and Checkout platforms. These providers manage PCI DSS Level 1 compliance, tokenization, 3D Secure authentication, fraud prevention, and global acquiring rails.
 
-### Stripe Checkout
-**Type:** Hosted checkout sessions with Stripe's payment infrastructure
-Stripe Checkout provides hosted payment pages for one-time payments and subscriptions, with built-in support for cards, digital wallets, bank redirects, and local payment methods. It handles PCI compliance, 3D Secure, and tax calculation, and is the benchmark against which open-source alternatives like Zoneless and TPT Pay are measured.
+The table below is sorted in descending order by company scale (market capitalization or latest enterprise valuation):
 
-### PayPal Commerce Platform
-**Type:** Hosted checkout with broad consumer reach
-PayPal's Commerce Platform provides hosted checkout accepting PayPal, Venmo, Pay Later, and major cards across 200+ markets. It manages PCI compliance for the hosted flow and includes built-in risk management and Seller Protection.
-
-### Square Online Checkout
-**Type:** Hosted payment links and checkout
-Square provides hosted checkout through payment links and integrations, redirecting buyers to a Square-hosted page to complete payment. It supports pre-populated buyer information and automated payment reminders.
-
-### Adyen
-**Type:** Enterprise hosted checkout with theme customization
-Adyen's Hosted Checkout supports theme creation with brand logo, display name, and default settings, with the theme ID passed in the session request. It supports a wide range of payment methods filtered by shopper country and currency.
-
-### Braintree
-**Type:** PayPal-owned gateway with Drop-in UI
-Braintree provides card and digital wallet processing with its Drop-in UI, which simplifies PCI compliance by handling card data collection. It is often chosen by businesses already in the PayPal ecosystem.
-
-### Mollie
-**Type:** European payment links and hosted checkout
-Mollie provides Payment Links that direct customers to a branded checkout page from any channel, with support for local European payment methods. It handles the payment page and PCI compliance for the hosted flow.
+| Platform | Company Scale (Valuation / Revenue) | Pricing (Starting Tier) | Free Tier Limit / Trial | Hosted Checkout Features | Best For |
+|:---|:---|:---|:---|:---|:---|
+| **[Stripe Checkout](https://stripe.com/payments/checkout)** | **$159B Valuation** (~$6.8B ARR) | **2.9% + $0.30** per transaction (domestic cards); +1.5% international | **$0/month, Pay-as-you-go** (No transaction allowance; $0 platform fee, pay strictly per successful transaction with no monthly minimums) | Pre-built responsive payment page, 100+ payment methods, Apple/Google Pay, dynamic address collection, 1-click Link checkout | Fast-growing SaaS, global e-commerce, and subscription businesses |
+| **[PayPal Commerce Platform](https://www.paypal.com/business)** | **~$52B Market Cap** (~$33.2B Revenue) | **3.49% + $0.49** per PayPal/Venmo checkout transaction (2.89% + $0.29 for standard cards) | **$0/month, Pay-as-you-go** (No free volume included; $0 monthly account maintenance fee, pay only per transaction) | Hosted checkout buttons, Venmo integration, Pay Later (BNPL), vaulting, seller protection | Consumer-facing storefronts leveraging PayPal brand trust & 400M+ active wallets |
+| **[Square Online Checkout](https://squareup.com/us/en/payments/checkout)** | **~$45B Market Cap** (~$24.2B Revenue) | **3.3% + $0.30** per transaction on Free plan (2.9% + $0.30 on Plus plan at $49/mo) | **$0/month Free Plan** (Unlimited transactions with zero monthly software fees; pay standard transaction rates only, or 30-day free trial on Plus tier) | Payment links, QR code checkout, buy buttons, SMS/email payment requests, inventory sync | Omnichannel retailers, pop-ups, restaurants, and SMB service providers |
+| **[Adyen](https://www.adyen.com)** | **~$32B Market Cap** (~€2.36B Net Revenue) | **Interchange++ + 0.60% + $0.11** per transaction | **$0/month base software fee** (No free volume tier; requires an enterprise merchant contract with dynamic monthly minimum processing fees) | Single-platform global acquiring, drop-in checkout UI, native multi-currency payouts, risk engine | Enterprise retailers and multinational platforms needing unified commerce |
+| **[Braintree](https://www.braintreepayments.com)** | **Subsidiary of PayPal** (Part of PayPal's $52B business) | **2.89% + $0.29** per standard card transaction (+1% for non-USD transactions) | **First $50,000 processed free** (Promotional developer onboarding tier with $0 processing fees on initial $50k volume, no expiration) | Drop-in UI, customized hosted fields, PayPal/Venmo/Card vaulting, fraud protection | Developer-first teams already utilizing PayPal rails seeking modular control |
+| **[Mollie](https://www.mollie.com)** | **$6.5B Valuation** (~€147M Net Revenue) | **1.80% + €0.25** per European card transaction (iDEAL at €0.25 flat) | **€0/month Standard Plan** (No free transaction volume allowance; €0 recurring base fee, charged exclusively per processed transaction) | Multilingual hosted payment pages, branded payment links, localized European APMs (iDEAL, Bancontact, Sofort) | European merchants and platforms needing effortless local payment method coverage |
 
 ---
 
 ## 🟩 Open-Source Software
 
-Self-hosted, community-driven Online Payment Page and Checkout tools. The open-source ecosystem spans **self-hosted payment hosts**, **Stripe-compatible alternatives**, **self-hostable payment APIs**, and **storefronts with checkout**.
+Self-hosted, developer-friendly payment orchestration engines, self-hostable payment links, and checkout frameworks. Sorted in descending order by GitHub stars.
 
-### Open Payment Host
-**Stack:** Go / PostgreSQL or SQLite | **License:** Open Source (MIT-style) 
-Open Payment Host is a self-hosted payment service for selling digital or physical goods without marketplace commissions, positioned as an alternative to Gumroad, Buy Me a Coffee, and Ko-fi [citation:1][citation:3]. Key features include:
-- **Hosted checkout and billing endpoints** with REST API calls like `/checkout/create` and `/subscription/create`
-- **Webhook handling** for payment success, refunds, and subscription changes, with at-least-once delivery and ordered events per product [citation:3]
-- **Multi-PSP support** including Stripe, Square, Razorpay, and PayPal
-- **Subscription cancellation** with single-use tokens and CSRF protection [citation:3]
-- **Docker Compose and Go build** deployment options
-
-The project has 243 stars and was last updated in September 2026 [citation:1]. It is positioned for teams wanting full control over their payment flow without marketplace fees.
-**Best for:** Businesses wanting a self-hosted payment host with subscription support and multi-provider webhooks, accepting the Go/PostgreSQL stack and moderate production readiness [citation:1].
-
-### Zoneless
-**Stack:** TypeScript / MongoDB / Express / Angular | **License:** Apache-2.0 
-Zoneless is an open-source **Stripe alternative for stablecoins**, providing checkout, subscriptions, and marketplace payouts through a **Stripe-compatible API** [citation:2]. Key features include:
-- **Hosted checkout** for USDC payments with products and payment links
-- **Subscriptions** with recurring payments, invoices, and status management
-- **Marketplace seller onboarding** with identity verification and Express-style dashboards
-- **Stripe-compatible object shapes** (Checkout Sessions, Payment Links, Customers, Subscriptions) and webhook patterns
-
-It was built for PromptBase (500,000+ users) and runs its seller payout infrastructure in production [citation:2]. Deployment via `docker compose up` with MongoDB.
-**Best for:** Marketplaces and businesses wanting a Stripe-compatible checkout API for stablecoin payments, particularly those in the crypto/USDC ecosystem.
-
-### TPT Pay
-**Stack:** Go / PostgreSQL / NATS / Vault | **License:** MIT 
-TPT Pay is a self-hostable **open-source Stripe alternative** with a REST API compatible with **Stripe API v2024-06-20**, an append-only double-entry ledger, and a `CardNetworkAdapter` interface that abstracts card network access [citation:7]. Key characteristics:
-- **SandboxAdapter** ships for testing, with `BankSponsorAdapter` or `DirectAcquiringAdapter` planned for production
-- **Webhook engine** via NATS JetStream for delivery and async jobs
-- **HashiCorp Vault** for card tokenization and API key encryption
-- **Merchant dashboard** (Next.js) and JavaScript/Python SDKs in development
-
-**Important:** The card network adapter is not yet production-ready—you must plug in a real adapter for live card processing [citation:7]. The project is MIT licensed and free to deploy.
-**Best for:** Developers wanting an MIT-licensed, Stripe-API-compatible payment API with a double-entry ledger, accepting that card network connectivity is not yet available out of the box.
-
-### Spree Commerce Storefront
-**Stack:** Next.js / TypeScript / React | **License:** MIT (storefront) 
-Spree's Next.js Storefront is a production-ready, headless ecommerce storefront with **one-page checkout** supporting guest and authenticated users, multi-shipment, coupons, gift cards, and store credit [citation:11]. Key checkout features include:
-- **Native Stripe, Adyen, and PayPal payments** via Payment Sessions, with card data never touching your server
-- **3D Secure** and support for Apple Pay, Google Pay, Klarna, Affirm, and SEPA
-- **Multi-region support** with country, currency, and language switching
-- **Wholesale portal** for B2B pricing and product gating
-- **Lighthouse scores** of 98/100 desktop and 88/100 mobile [citation:11]
-
-It is MIT licensed and built on Next.js 16 and React 19. The storefront is the frontend layer—the Spree Commerce backend is a separate Ruby on Rails application.
-**Best for:** Teams wanting a modern, production-ready storefront with checkout built in, accepting the Next.js/Spree backend stack.
-
-### StatiCart
-**Stack:** JavaScript / Stripe / DynamoDB / Lambda | **License:** Open Source 
-StatiCart is a free, open-source, Stripe-powered ecommerce platform with a **static site + thin API** architecture [citation:8]. Key characteristics:
-- **Static site on CDN** for product pages and cart (localStorage)
-- **Thin Lambda API** for checkout, webhooks, stock, and orders
-- **DynamoDB single-table** database
-- **Config-driven branding** via `staticart.config.json`
-- **Platform stacking** via Clearstack for component overrides
-
-It is positioned as a cheaply hosted, limited-scope ecommerce solution for developers wanting Stripe checkout without a full platform [citation:8].
-**Best for:** Developers wanting a lightweight, Stripe-powered checkout with static hosting and minimal infrastructure, accepting a limited-scope ecommerce feature set.
+| Repository | GitHub Stars | Stack | License | Architecture & Capabilities | Primary Use Case |
+|:---|:---:|:---|:---|:---|:---|
+| **[juspay/hyperswitch](https://github.com/juspay/hyperswitch)** | [![Stars](https://img.shields.io/github/stars/juspay/hyperswitch?style=social&color=white)](https://github.com/juspay/hyperswitch/stargazers) | Rust / TypeScript / Docker | Apache-2.0 | High-performance payment switch connecting to 100+ processors (Stripe, Adyen, Braintree). Includes unified checkout UI, vault tokenization, smart routing, and auto-retries. | Enterprise payment orchestration & multi-PSP fallback |
+| **[medusajs/medusa](https://github.com/medusajs/medusa)** | [![Stars](https://img.shields.io/github/stars/medusajs/medusa?style=social&color=white)](https://github.com/medusajs/medusa/stargazers) | TypeScript / Node.js / PostgreSQL | MIT | Modular headless commerce engine with multi-currency checkout, cart flows, dynamic shipping, tax calculations, and payment gateway adapters. | Custom headless e-commerce backends with checkout flows |
+| **[saleor/saleor](https://github.com/saleor/saleor)** | [![Stars](https://img.shields.io/github/stars/saleor/saleor?style=social&color=white)](https://github.com/saleor/saleor/stargazers) | Python / Django / GraphQL / Next.js | BSD-3-Clause | GraphQL-first headless commerce engine featuring multi-channel checkout sessions, automated tax, and native Stripe/Adyen gateway apps. | High-volume GraphQL digital storefronts and marketplaces |
+| **[getlago/lago](https://github.com/getlago/lago)** | [![Stars](https://img.shields.io/github/stars/getlago/lago?style=social&color=white)](https://github.com/getlago/lago/stargazers) | Ruby on Rails / Go / PostgreSQL | AGPL-3.0 | Open-source metering and billing API. Delivers usage-based metering, invoice generation, customer portals, and multi-gateway payment orchestration. | Developer SaaS billing & usage-based metering |
+| **[polarsource/polar](https://github.com/polarsource/polar)** | [![Stars](https://img.shields.io/github/stars/polarsource/polar?style=social&color=white)](https://github.com/polarsource/polar/stargazers) | Python / FastAPI / Next.js / PostgreSQL | Apache-2.0 | Merchant-of-record style payment infrastructure for developers. Includes hosted checkout pages, license keys, digital product delivery, and subscription billing. | Selling software licenses, SaaS subscriptions, and digital assets |
+| **[btcpayserver/btcpayserver](https://github.com/btcpayserver/btcpayserver)** | [![Stars](https://img.shields.io/github/stars/btcpayserver/btcpayserver?style=social&color=white)](https://github.com/btcpayserver/btcpayserver/stargazers) | C# / .NET / PostgreSQL / Docker | MIT | Censorship-resistant, self-hosted cryptocurrency payment processor. Features point-of-sale apps, hosted invoice pages, payment links, and crowdfunding checkout. | Commission-free Bitcoin, Lightning Network & crypto checkouts |
+| **[killbill/killbill](https://github.com/killbill/killbill)** | [![Stars](https://img.shields.io/github/stars/killbill/killbill?style=social&color=white)](https://github.com/killbill/killbill/stargazers) | Java / MySQL / PostgreSQL | Apache-2.0 | Enterprise subscription billing and payment processing platform. Manages complex dunning cycles, invoicing, payment gateway routing, and account ledgers. | Enterprise self-hosted recurring billing & gateway routing |
+| **[bitcart/bitcart](https://github.com/bitcart/bitcart)** | [![Stars](https://img.shields.io/github/stars/bitcart/bitcart?style=social&color=white)](https://github.com/bitcart/bitcart/stargazers) | Python / FastAPI / Vue.js / Docker | MIT | Self-hosted payment processor supporting BTC, ETH, Monero, and stablecoins. Provides pre-built checkout pages, payment buttons, and merchant dashboards. | Multi-currency cryptocurrency payment pages |
+| **[zonelessdev/zoneless](https://github.com/zonelessdev/zoneless)** | [![Stars](https://img.shields.io/github/stars/zonelessdev/zoneless?style=social&color=white)](https://github.com/zonelessdev/zoneless/stargazers) | TypeScript / Angular / Express / MongoDB | Apache-2.0 | Stripe-compatible API and checkout for stablecoins (USDC). Replicates Checkout Sessions, Payment Links, Subscriptions, and marketplace payouts. | Stablecoin checkouts using familiar Stripe-shaped APIs |
+| **[spree/spree_starter](https://github.com/spree/spree_starter)** | [![Stars](https://img.shields.io/github/stars/spree/spree_starter?style=social&color=white)](https://github.com/spree/spree_starter/stargazers) | Next.js 15 / TypeScript / Tailwind CSS | MIT | Production-ready headless storefront featuring a frictionless one-page checkout, multi-currency support, guest ordering, and native Stripe/PayPal integration. | Modern Next.js e-commerce storefront with integrated checkout |
+| **[abishekmuthian/open-payment-host](https://github.com/abishekmuthian/open-payment-host)** | [![Stars](https://img.shields.io/github/stars/abishekmuthian/open-payment-host?style=social&color=white)](https://github.com/abishekmuthian/open-payment-host/stargazers) | Go / SQLite / PostgreSQL / Docker | MIT | Self-hosted payment host and Gumroad alternative. Features hosted checkout endpoints, webhooks, multi-PSP routing (Stripe, Square, PayPal, Razorpay), and automated file delivery. | Solo creators & indie hackers selling digital downloads |
+| **[tpt-solutions/tpt-payments](https://github.com/tpt-solutions/tpt-payments)** | [![Stars](https://img.shields.io/github/stars/tpt-solutions/tpt-payments?style=social&color=white)](https://github.com/tpt-solutions/tpt-payments/stargazers) | Go / PostgreSQL / NATS JetStream / Vault | MIT | Stripe API (v2024-06-20) compatible payment server with append-only double-entry ledger, HashiCorp Vault tokenization, and card network adapter abstraction. | Custom core-banking/payment rail engineering |
+| **[techninja/staticart](https://github.com/techninja/staticart)** | [![Stars](https://img.shields.io/github/stars/techninja/staticart?style=social&color=white)](https://github.com/techninja/staticart/stargazers) | JavaScript / AWS Lambda / DynamoDB | MIT | Minimalist serverless e-commerce template using Stripe Checkout and static site generation for ultra-low hosting overhead. | Static site owners seeking lightweight Stripe checkout |
 
 ---
 
-## 📊 Comparison at a Glance
+## 🔍 Feature Comparison Matrix
 
-| Software | License | Stack | Hosted Checkout | Subscription Support | Self-Hosted | Best For |
-|----------|---------|-------|-----------------|----------------------|-------------|----------|
-| **Stripe Checkout** | Proprietary | Cloud | ✅ | ✅ | ❌ | Standard hosted checkout |
-| **PayPal Commerce** | Proprietary | Cloud | ✅ | ✅ | ❌ | Broad consumer reach |
-| **Open Payment Host** | Open Source | Go/Postgres | ✅ | ✅ | ✅ | Self-hosted checkout + webhooks |
-| **Zoneless** | Apache-2.0 | TypeScript/MongoDB | ✅ | ✅ | ✅ | Stablecoin Stripe alternative |
-| **TPT Pay** | MIT | Go/Postgres | (API) | (Check) | ✅ | Stripe-compatible API + ledger |
-| **Spree Storefront** | MIT | Next.js | ✅ One-page | (Spree backend) | ✅ | Production storefront + checkout |
-| **StatiCart** | Open Source | JS/Stripe/DynamoDB | ✅ Stripe | (Check) | ✅ | Lightweight static store |
+| Project | Type | PCI Scope Reduction | Subscriptions / Recurring | Dynamic Payment Routing | Self-Hosted Deployment |
+|:---|:---:|:---:|:---:|:---:|:---:|
+| **Stripe Checkout** | SaaS | ✅ SAQ A | ✅ Native Stripe Billing | ❌ (Stripe only) | ❌ Cloud only |
+| **PayPal Commerce** | SaaS | ✅ SAQ A | ✅ Built-in | ❌ (PayPal rails) | ❌ Cloud only |
+| **Square Online Checkout** | SaaS | ✅ SAQ A | ✅ Square Subscriptions | ❌ (Square only) | ❌ Cloud only |
+| **Adyen** | SaaS | ✅ SAQ A | ✅ Recurring Payments | ❌ Proprietary | ❌ Cloud only |
+| **Braintree** | SaaS | ✅ SAQ A | ✅ Vault Recurring | ❌ Proprietary | ❌ Cloud only |
+| **Mollie** | SaaS | ✅ SAQ A | ✅ Mollie Recurring | ❌ (Mollie rails) | ❌ Cloud only |
+| **Hyperswitch** | Open Source | ✅ SAQ A (Vaulted) | ⚠️ Via downstream PSP | ✅ 100+ Gateways | ✅ Docker / Kubernetes |
+| **Medusa** | Open Source | ✅ Via PSP plugin | ⚠️ Plugin dependent | ⚠️ Via plugin | ✅ Node / Docker |
+| **Saleor** | Open Source | ✅ Via App/Gateway | ⚠️ Via App/Stripe | ⚠️ Via App | ✅ Docker / Kubernetes |
+| **Lago** | Open Source | ✅ Connects to PSP | ✅ Core feature | ✅ Multi-PSP | ✅ Docker Compose |
+| **Polar** | Open Source | ✅ Merchant of Record | ✅ Core feature | ❌ Managed | ✅ Docker Compose |
+| **BTCPay Server** | Open Source | ✅ Full (No card data) | ✅ Pull payments | ❌ Crypto nodes | ✅ Docker / LND |
+| **Kill Bill** | Open Source | ✅ Tokenized | ✅ Core feature | ✅ Plugin architecture | ✅ Docker / Java |
+| **Bitcart** | Open Source | ✅ Full (No card data) | ⚠️ Invoices | ❌ Crypto nodes | ✅ Docker Compose |
+| **Open Payment Host** | Open Source | ✅ Redirect/Embed | ✅ Via Stripe/Square | ✅ Stripe/PayPal/Square | ✅ Single binary / Docker |
+
+---
+
+## 💡 Key Evaluation Criteria
+
+When selecting a hosted payment page or checkout stack, consider:
+
+1. **Compliance Overhead (PCI DSS):** Hosted checkout pages (like Stripe Checkout or Mollie Payment Links) restrict your audit scope to **SAQ A**, ensuring raw primary account numbers (PANs) never touch your web servers.
+2. **Payment Method Breadth (APMs):** Conversion rates rise by up to 30% when presenting localized payment methods (e.g., Apple Pay, Google Pay, iDEAL in the Netherlands, Pix in Brazil, Klarna BNPL).
+3. **Take Rates & Processing Margins:** Commercial SaaS platforms take between `1.8% + €0.25` and `3.49% + $0.49`. For high-volume or margin-sensitive applications, self-hosting an orchestration layer like **Hyperswitch** or a crypto gateway like **BTCPay Server** eliminates middleman platform fees.
+4. **Developer Experience & APIs:** Stripe-compatible schemas (emulated by TPT Pay and Zoneless) minimize rewrite costs when migrating between hosted and self-hosted environments.
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! If you know of an open-source Online Payment Page or Checkout tool that should be listed here, please open a pull request with:
+Contributions to expand this curated collection are welcome! To propose a new open-source payment tool, checkout library, or hosted platform, please submit a pull request ensuring:
 
-- Project name and URL
-- Brief description (1–2 sentences)
-- Stack and license
-- Why it stands out
-
-Please ensure the project is actively maintained (releases within the last 12 months) and genuinely open-source.
-
-**Note on the open-source ecosystem:** Open-source checkout splits between **self-hosted payment hosts** (Open Payment Host with multi-PSP webhooks, Zoneless for stablecoins, TPT Pay with a Stripe-compatible API) and **storefronts with checkout** (Spree Storefront, StatiCart). **Open Payment Host** is the most mature self-hosted option for traditional card payments with subscription support [citation:1][citation:3], while **Zoneless** offers the strongest Stripe API compatibility for crypto-native businesses [citation:2]. **TPT Pay** provides a promising MIT-licensed foundation but requires a production card adapter [citation:7]. No open-source project fully replicates Stripe Checkout's breadth of payment methods and fraud tooling—for production card acquiring, commercial gateways remain the practical choice.
+- The repository is actively maintained (commits or releases within the past 12 months).
+- Open-source submissions include an OSI-approved license.
+- Include a neutral description highlighting stack, architecture, and checkout features.
 
 ---
 
 ## 📄 License
 
-This list is released under CC0 1.0 Universal (Public Domain). The software projects listed retain their respective licenses.
+This repository is distributed under the [CC0 1.0 Universal](LICENSE) (Public Domain Dedication). Listed projects and trademarks remain the property of their respective owners.
 
 ---
 
-⭐ **If this list helped you discover a useful tool, please star the repo!** ⭐
+⭐ **If this repository helps streamline your checkout or payment infrastructure, please star it!** ⭐
